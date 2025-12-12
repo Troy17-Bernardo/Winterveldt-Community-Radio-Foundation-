@@ -32,7 +32,98 @@ body{
   font-weight:600;
   cursor:pointer;
 }
+.container{:root{
+  --cream:#FBF8F2;
+  --brown:#5A3E2B;
+  --gold:#C9A86A;
+  --text:#2B2B2B;
+}
+
+body{
+  margin:0;
+  font-family:Inter,Arial;
+  background:var(--cream);
+  color:var(--text);
+}
+
+.header{
+  display:flex;
+  align-items:center;
+  padding:18px;
+  background:var(--brown);
+  color:white;
+}
+
+.header img{
+  height:70px;
+  width:70px;
+  border-radius:6px;
+}
+
+.nav{
+  margin-left:auto;
+  display:flex;
+  gap:10px
+}
+
+.nav .nav-btn{
+  background:var(--gold);
+  border:none;
+  padding:10px 14px;
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
+}
+
 .container{
+  max-width:1100px;
+  margin:20px auto;
+  padding:0 20px;
+}
+
+.section{
+  background:white;
+  padding:20px;
+  border-radius:8px;
+  margin-top:20px;
+  border-left:6px solid var(--gold);
+}
+
+/* MANAGEMENT STYLES */
+.management-wrapper{
+  display:flex;
+  justify-content:center;
+  gap:60px;
+  margin:30px 0;
+  flex-wrap:wrap;
+}
+
+.management-card{
+  text-align:center;
+}
+
+.management-photo{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  cursor:pointer;
+  transition:transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow:0 6px 18px rgba(0,0,0,0.25);
+}
+
+.management-photo:hover{
+  transform:scale(1.12);
+  box-shadow:0 14px 35px rgba(0,0,0,0.45);
+}
+
+.footer{
+  margin-top:20px;
+  padding:20px;
+  background:var(--brown);
+  color:white;
+}
+
   max-width:1100px;
   margin:20px auto;
   padding:0 20px;
