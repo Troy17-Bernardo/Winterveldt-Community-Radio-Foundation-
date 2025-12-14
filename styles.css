@@ -1,169 +1,118 @@
 :root{
-  --cream:#FBF8F2;
-  --brown:#5A3E2B;
-  --gold:#C9A86A;
+  --gold:#D4AF6A;
   --text:#2B2B2B;
+  --bg-light: linear-gradient(135deg,#7A1023,#B11234,#F2A1B3);
+  --bg-dark: linear-gradient(135deg,#0f0f0f,#1c1c1c,#2a2a2a);
 }
 
 body{
   margin:0;
   font-family:Inter,Arial;
-  background:var(--cream);
+  background:var(--bg-light);
+  background-attachment:fixed;
   color:var(--text);
+  transition:background 0.4s ease,color 0.4s ease;
 }
 
-.header{
-  display:flex;
-  align-items:center;
-  padding:18px;
-  background:var(--brown);
-  color:white;
+body.light-mode { background: var(--bg-light); color: var(--text); }
+body.dark-mode { background: var(--bg-dark); color: #f1f1f1; }
+
+body.light-mode .section { background: rgba(255,255,255,0.9); color:#2B2B2B; }
+body.dark-mode .section { background: rgba(50,50,50,0.9); color:#f1f1f1; }
+
+.section h1, .section h2, .section h3, .section h4 { color: var(--gold); }
+.section p { color: inherit; }
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px;
+  background: linear-gradient(90deg,#5A1F2E,#7A1023);
+  color: white;
 }
 
-.header img{
-  height:70px;
-  width:70px;
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-container img {
+  height: 70px;
+  width: 70px;
+  border-radius: 6px;
+}
+
+.logo-text {
+  line-height: 1.2;
+  font-weight: bold;
+  color: white;
+  font-size: 18px;
+}
+
+@media(min-width: 900px){
+  .logo-text { font-size: 22px; }
+}
+
+/* NAVIGATION */
+.nav{ display:flex; gap:10px; flex-wrap:wrap; margin-left:auto; }
+.nav-btn{
+  background:var(--gold);
+  padding:10px 14px;
   border-radius:6px;
+  text-decoration:none;
+  color:#000;
+  font-weight:600;
+  transition:transform 0.3s ease;
 }
+.nav-btn:hover{ transform:scale(1.1); }
 
-.nav{
-  margin-left:auto;
-  display:flex;
-  gap:10px;
+/* LIVE ON AIR */
+.nav .live-btn{
+  display:flex; align-items:center; gap:6px;
+  background:#c00000; color:white; font-weight:bold;
+  animation:pulse 1.5s infinite; padding:10px 14px; border-radius:6px;
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
 }
+.nav .live-btn:hover{ transform:scale(1.15); box-shadow:0 0 15px rgba(255,0,0,0.8),0 8px 18px rgba(0,0,0,0.25); }
+.nav .live-btn .dot{ width:8px; height:8px; border-radius:50%; background:white; animation:blink 1s infinite; }
 
-/* NAV BUTTONS - ENHANCED HOVER EFFECT */
-.nav .nav-btn {
-    background: var(--gold);
-    border: none;
-    padding: 10px 14px;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
-}
+@keyframes pulse{ 0%{box-shadow:0 0 0 rgba(255,0,0,0.7);} 70%{box-shadow:0 0 20px rgba(255,0,0,0);} 100%{box-shadow:0 0 0 rgba(255,0,0,0);} }
+@keyframes blink{ 0%,50%,100%{opacity:1;} 25%,75%{opacity:0;} }
 
-.nav .nav-btn:hover {
-    transform: scale(1.15);
-    box-shadow: 0 0 15px rgba(201, 168, 106, 0.8), 0 8px 18px rgba(0,0,0,0.25);
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
-}
+/* THEME TOGGLE */
+#themeToggle{ background:none; border:none; color:white; font-size:20px; cursor:pointer; }
 
-.nav .nav-btn:active {
-    transform: scale(1.08);
-}
+/* MAIN CONTENT */
+.container{ max-width:1100px; margin:30px auto; padding:0 20px; }
+.section{ background:rgba(255,255,255,0.92); padding:20px; border-radius:10px; border-left:6px solid var(--gold); margin-bottom:20px; }
 
-.container{
-  max-width:1100px;
-  margin:20px auto;
-  padding:0 20px;
-}
+/* MANAGEMENT */
+.management-wrapper{ display:flex; justify-content:center; gap:60px; margin:30px 0; flex-wrap:wrap; }
+.management-card{text-align:center;}
+.management-photo{ width:140px; height:140px; border-radius:50%; object-fit:cover; cursor:pointer; transition:transform 0.35s ease, box-shadow 0.35s ease; box-shadow:0 6px 18px rgba(0,0,0,0.25); }
+.management-photo:hover{ transform:scale(1.12); box-shadow:0 14px 35px rgba(0,0,0,0.45); }
 
-.section{
-  background:white;
-  padding:20px;
-  border-radius:8px;
-  margin-top:20px;
-  border-left:6px solid var(--gold);
-}
+/* FOOTER */
+.footer{ padding:30px; background:linear-gradient(90deg,#5A1F2E,#7A1023); color:white; }
+.radio-player{ display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:20px; }
+.radio-player audio{ width:260px; }
 
-/* MANAGEMENT STYLES */
-.management-wrapper{
-  display:flex;
-  justify-content:center;
-  gap:60px;
-  margin:30px 0;
-  flex-wrap:wrap;
-}
+/* CONTACTS */
+.footer-contacts{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px 40px; max-width:1000px; margin:0 auto; }
+.footer-contacts a{ color:white; text-decoration:none; transition: color 0.3s ease; }
+.footer-contacts i{ color:var(--gold); margin-right:8px; }
+.footer-contacts p:hover a{ color:var(--gold); }
 
-.management-card{
-  text-align:center;
-}
+/* RESPONSIVE */
+@media(max-width:900px){ .footer-contacts{grid-template-columns:repeat(2,1fr);} }
+@media(max-width:500px){ .footer-contacts{grid-template-columns:1fr;} }
 
-.management-photo{
-  width:140px;
-  height:140px;
-  border-radius:50%;
-  object-fit:cover;
-  cursor:pointer;
-  transition:transform 0.35s ease, box-shadow 0.35s ease;
-  box-shadow:0 6px 18px rgba(0,0,0,0.25);
-}
-
-.management-photo:hover{
-  transform:scale(1.12);
-  box-shadow:0 14px 35px rgba(0,0,0,0.45);
-}
-
-.footer{
-  margin-top:20px;
-  padding:20px;
-  background:var(--brown);
-  color:white;
-}
-
-/* Footer icons and hover effect */
-.footer i {
-    margin-right: 10px;
-    color: var(--gold);
-    width: 20px;
-    text-align: center;
-    transition: transform 0.3s ease, text-shadow 0.3s ease;
-}
-.footer p {
-    display: flex;
-    align-items: center;
-    margin: 5px 0;
-}
-.footer p:hover i {
-    transform: scale(1.3);
-    text-shadow: 0 0 8px rgba(201, 168, 106, 0.8);
-}
-
-/* CINEMATIC GOLD SWIRL WITH SHIMMER */
-#goldWave {
-    position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: url('gold-wave.png') center/cover no-repeat;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(0, 0) rotate(-20deg) scale(1);
-    animation: goldFlow 20s linear infinite;
-    overflow: hidden;
-}
-
-#goldWave::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0.0) 0%,
-        rgba(255, 255, 255, 0.15) 50%,
-        rgba(255, 255, 255, 0.0) 100%
-    );
-    transform: rotate(-20deg);
-    animation: shimmer 5s linear infinite;
-    pointer-events: none;
-}
-
-/* Diagonal drift keyframes */
-@keyframes goldFlow {
-    0% { transform: translate(-10%, -10%) rotate(-20deg) scale(1); }
-    25% { transform: translate(10%, 5%) rotate(-20deg) scale(1.02); }
-    50% { transform: translate(30%, 20%) rotate(-20deg) scale(1); }
-    75% { transform: translate(10%, 35%) rotate(-20deg) scale(1.03); }
-    100% { transform: translate(-10%, -10%) rotate(-20deg) scale(1); }
-}
-
-/* Shimmer movement keyframes */
-@keyframes shimmer {
-    0% { transform: translateX(-100%) rotate(-20deg); }
-    100% { transform: translateX(100%) rotate(-20deg); }
-}
+/* GOLD SWIRL */
+#goldWave{ position:fixed; top:-50%; left:-50%; width:200%; height:200%; background:url('gold-wave.png') center/cover no-repeat; pointer-events:none; z-index:9999; transform:translate(0,0) rotate(-20deg) scale(1); animation: goldFlow 20s linear infinite; }
+#goldWave::after{ content:''; position:absolute; top:0; left:-50%; width:200%; height:200%; background: linear-gradient(120deg,rgba(255,255,255,0)0%,rgba(255,255,255,0.15)50%,rgba(255,255,255,0)100%); transform:rotate(-20deg); animation: shimmer 5s linear infinite; }
+@keyframes goldFlow{ 0%{transform:translate(-10%,-10%) rotate(-20deg) scale(1);} 25%{transform:translate(10%,5%) rotate(-20deg) scale(1.02);} 50%{transform:translate(30%,20%) rotate(-20deg) scale(1);} 75%{transform:translate(10%,35%) rotate(-20deg) scale(1.03);} 100%{transform:translate(-10%,-10%) rotate(-20deg) scale(1);} }
+@keyframes shimmer{ 0%{transform:translateX(-100%) rotate(-20deg);} 100%{transform:translateX(100%) rotate(-20deg);} }
