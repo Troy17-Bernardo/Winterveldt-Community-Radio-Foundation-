@@ -1,99 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Winterveldt Community Radio – Community-driven radio empowering local voices.">
+
 <title>Winterveldt Community Radio</title>
-<!-- Font Awesome for icons -->
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
 <script src="script.js" defer></script>
 </head>
 
-<body>
+<body class="light-mode">
 
-<!-- GOLD SWIRL ANIMATION -->
+<!-- GOLD SWIRL -->
 <div id="goldWave"></div>
 
 <header class="header">
-<img src="logo.png" alt="Logo">
-<nav class="nav">
-<button class="nav-btn">Home</button>
-<button class="nav-btn">About</button>
-<button class="nav-btn">Programs</button>
-<button class="nav-btn">Audio Streaming (LIVE!)</button>
-<button class="nav-btn">Gallery</button>
-<button class="nav-btn">Schedule</button>
-<button class="nav-btn">Donate</button>
-<button class="nav-btn">Blog</button>
-<button class="nav-btn">Contact</button>
-</nav>
+  <div class="logo-container">
+    <img src="logo.png" alt="Winterveldt Community Radio logo">
+    <div class="logo-text">
+      <span>Winterveldt</span><br>
+      <span>Community</span><br>
+      <span>Radio</span>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a href="#" class="nav-btn">Home</a>
+    <a href="#" class="nav-btn">About</a>
+    <a href="#" class="nav-btn">Programs</a>
+    <a href="#" class="nav-btn live-btn">
+      <span class="dot"></span> LIVE • ON AIR
+    </a>
+    <a href="#" class="nav-btn">Gallery</a>
+    <a href="#" class="nav-btn">Schedule</a>
+    <a href="#" class="nav-btn">Donate</a>
+    <a href="#" class="nav-btn">Blog</a>
+    <a href="#" class="nav-btn">Contact</a>
+  </nav>
+
+  <button id="themeToggle" title="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+  </button>
 </header>
 
 <main class="container">
+  <!-- INTRO -->
+  <section class="section">
+    <h1>Winterveldt Community Radio</h1>
+    <p>Community-driven radio dedicated to empowering voices.</p>
+  </section>
 
-<section class="section">
-  <h1 style="color:var(--brown)">Winterveldt Community Radio</h1>
-  <p>Community-driven radio dedicated to empowering voices.</p>
-</section>
+  <!-- MOTTO -->
+  <section class="section">
+    <h2>MOTTO</h2>
+    <p><strong>"Your Voice Matters"</strong></p>
+  </section>
 
-<section class="section">
-<h2 style="color:var(--brown)">MOTTO</h2>
-<p><strong>"Your Voice Matters"</strong></p>
-</section>
+  <!-- VISION -->
+  <section class="section">
+    <h2>VISION</h2>
+    <p>To bring local content close to you, creating awareness of social issues and current affairs, showcasing local music, news, stories, & entertainment, while ensuring that our community's stories are told & heard.</p>
+  </section>
 
-<section class="section">
-<h2 style="color:var(--brown)">VISION</h2>
-<p>To bring local content close to you, creating awareness of social issues and current affairs, showcasing local music, news, stories, & entertainment, while ensuring that our community's stories are told & heard.</p>
-</section>
+  <!-- MISSION -->
+  <section class="section">
+    <h2>MISSION</h2>
+    <p>To empower & engage our community through informative, entertaining, & inclusive programming, while promoting local talent & amplifying the voices of our listeners.</p>
+  </section>
 
-<section class="section">
-<h2 style="color:var(--brown)">MISSION</h2>
-<p>To empower & engage our community through informative, entertaining, & inclusive programming, while promoting local talent & amplifying the voices of our listeners.</p>
-</section>
+  <!-- MANAGEMENT -->
+  <section class="section">
+    <h2>Management</h2>
+    <div class="management-wrapper">
+      <div class="management-card">
+        <img src="Pic 1.jpg" class="management-photo" alt="Tinyiko Oscar Bungeni">
+        <p><strong>Tinyiko Oscar Bungeni</strong> – Director</p>
+      </div>
+      <div class="management-card">
+        <img src="Pic 2.jpg" class="management-photo" alt="Tinyiko Malungani">
+        <p><strong>Tinyiko Malungani</strong> – Manager</p>
+      </div>
+    </div>
 
-<!-- MANAGEMENT SECTION -->
-<section class="section">
-<h2>Management</h2>
-
-<div class="management-wrapper">
-
-  <div class="management-card">
-    <img src="Pic 1.jpg" class="management-photo" alt="Tinyiko Oscar Bungeni">
-    <p><strong>Tinyiko Oscar Bungeni</strong> – Director</p>
-  </div>
-
-  <div class="management-card">
-    <img src="Pic 2.jpg" class="management-photo" alt="Tinyiko Malungani">
-    <p><strong>Tinyiko Malungani</strong> – Manager</p>
-  </div>
-
-</div>
-
-<h3>Board Members</h3>
-<p>Tinyiko Oscar Bungeni – Director</p>
-<p>Kabelo Ramalepe – Executive Director</p> 
-<p>Tinyiko Malungani – Manager</p>
-<p>Acnite Mangayi – Marketing</p>
-<p>Thomas Ndobe – Head Of News</p>
-<p>Mel Bee – Executive Producer</p> 
-<p>Lassy Ntsako Ngobeni – Technical Producer</p>
-<p>Ronda Shondlani – Media Liaison Officer</p>
-
-</section>
-
+    <h3>Board Members</h3>
+    <p>Tinyiko Oscar Bungeni – Director</p>
+    <p>Kabelo Ramalepe – Executive Member</p>
+    <p>Tinyiko Malungani – Manager</p>
+    <p>Acnite Mangayi – Marketing</p>
+    <p>Thomas Ndobe – Head Of News</p>
+    <p>Mel Bee – Executive Producer</p>
+    <p>Lassy Ntsako Ngobeni – Technical Producer</p>
+    <p>Ronda Shondlani – Media Liaison Officer</p>
+  </section>
 </main>
 
+<!-- FOOTER WITH RADIO PLAYER -->
 <footer class="footer">
-<h4>Contacts</h4>
-<p><i class="fas fa-phone"></i> Contact: +27751728665</p>
-<p><i class="fab fa-whatsapp"></i> WhatsApp: +27792199728</p>
-<p><i class="fas fa-envelope"></i> Email: info@wcr012.co.za</p>
-<p><i class="fas fa-globe"></i> Alt Website: www.wcr012.co.za</p>
-<p><i class="fab fa-facebook"></i> Facebook: Winterveldt Community Radio</p>
-<p><i class="fab fa-tiktok"></i> TikTok: @wcr012</p>
-<p><i class="fab fa-youtube"></i> YouTube: Winterveldt Community Radio</p>
-<p><i class="fas fa-map-marker-alt"></i> Address: 0006 Mashaba Stand, Via Phafundi Shop next to Skhosana, Winterveldt, 0198</p>
-</footer>
+  <div class="radio-player">
+    <i class="fas fa-broadcast-tower"></i>
+    <span>LIVE STREAM</span>
+    <audio controls autoplay>
+      <source src="https://your-stream-url-here" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
 
+  <h4 class="footer-title">Contacts</h4>
+  <div class="footer-contacts">
+    <p><i class="fas fa-phone"></i><a href="tel:+27751728665">+27 75 172 8665</a></p>
+    <p><i class="fab fa-whatsapp"></i><a href="https://wa.me/27792199728" target="_blank">+27 79 219 9728</a></p>
+    <p><i class="fas fa-envelope"></i><a href="mailto:info@wcr012.co.za">info@wcr012.co.za</a></p>
+    <p><i class="fas fa-globe"></i><a href="https://www.wcr012.co.za" target="_blank">www.wcr012.co.za</a></p>
+    <p><i class="fab fa-facebook"></i><a href="https://www.facebook.com/share/1D4H3b2Y9x/" target="_blank">Winterveldt Community Radio</a></p>
+    <p><i class="fab fa-tiktok"></i><a href="https://www.tiktok.com/@wcr012" target="_blank">@wcr012</a></p>
+    <p><i class="fab fa-youtube"></i><a href="https://youtube.com/@winterveldtcommunityradio" target="_blank">Winterveldt Community Radio</a></p>
+    <p><i class="fas fa-map-marker-alt"></i><a href="https://www.google.com/maps/search/Winterveldt+0198" target="_blank">0006 Mashaba Stand, Winterveldt, 0198</a></p>
+  </div>
+</footer>
 </body>
 </html>
